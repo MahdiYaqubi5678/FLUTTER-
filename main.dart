@@ -12,30 +12,41 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.deepPurple[200],
         appBar: AppBar(
           backgroundColor: Colors.deepPurple,
-          title: const Text("My AppBar", textAlign: TextAlign.center),
+          title: const Text("My AppBar"),
           elevation: 30,
           leading: const Icon(Icons.menu),
           actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.logout, color: Colors.black))],
         ),
-        body: Center(
-          child: Container(
-            width: 300,
-            height: 300,
-            decoration: BoxDecoration(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            //1st Container
+            Container(
+              width: 300,
+              height: 300,
               color: Colors.deepPurple,
-              borderRadius: BorderRadius.circular(25),
             ),
-            padding: const EdgeInsets.all(25),
-            child: const Icon(
-              Icons.favorite,
-              size: 60,
+
+            //2nd Container
+            Container(
+              width: 200,
+              height: 200,
+              color: Colors.deepPurple[300],
+            ),
+            
+            //3rd Container
+            Container(
+              width: 100,
+              height: 100,
+              color: Colors.deepPurple[200],
             )
-          ),
+          ],
         ),
-      ),
+
+      )
     );
   }
 }
